@@ -7,18 +7,21 @@
 -PREZZO SCRITTO CON 2 CIFRE DECIMALI
 */
 
-// VARIABILI
+// --VARIABILI--
 const lunghezzaPercorso = prompt(`Quanti km misura il percorso che vuoi fare?`);
 
 const age = prompt(`Quanti anni hai?`);
 
-const price = (lunghezzaPercorso * (0.21));
+// PREZZO NORMALE
+let price = (lunghezzaPercorso * (0.21));
 
-const price1 = ((lunghezzaPercorso * (0.21))-(price/100*20));
+// SCONTO UNDER 18
+let price1 = ((lunghezzaPercorso * (0.21))-(price/100*20));
 
-const price2 = ((lunghezzaPercorso * (0.21))-(price/100*40));
+// SCONTO OVER 65
+let price2 = ((lunghezzaPercorso * (0.21))-(price/100*40));
 
-// LOGICA
+// --LOGICA--
 if (age<18) {
     document.writeln(`<p> ${price1} €</p>`);
 } else if (age>65) {
