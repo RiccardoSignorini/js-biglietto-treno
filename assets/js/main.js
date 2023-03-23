@@ -8,18 +8,21 @@
 */
 
 // --VARIABILI--
-const lunghezzaPercorso = prompt(`Quanti km misura il percorso che vuoi fare?`);
+const lunghezzaPercorso = parseFloat(prompt(`Quanti km misura il percorso che vuoi fare?`));
 
-const age = prompt(`Quanti anni hai?`);
+const age = parseFloat(prompt(`Quanti anni hai?`));
 
 // PREZZO NORMALE
 let price = (lunghezzaPercorso * (0.21));
+price = price.toFixed(2)
 
 // SCONTO UNDER 18
 let price1 = ((lunghezzaPercorso * (0.21))-(price/100*20));
+price1 = price1.toFixed(2)
 
 // SCONTO OVER 65
 let price2 = ((lunghezzaPercorso * (0.21))-(price/100*40));
+price2 = price2.toFixed(2)
 
 // --LOGICA--
 if (age<18) {
